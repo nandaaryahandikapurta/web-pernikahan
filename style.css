@@ -1,0 +1,91 @@
+:root {
+  --pink: #f14e95;
+  --bg: #000;
+  --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
+}
+
+.body {
+  font-size: 1.2rem;
+  font-family: "Encode Sans Expanded", sans-serif;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(img/wedding.webp);
+  background-position: center;
+  background-size: cover;
+  filter: blur();
+  z-index: -1;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+}
+.hero h1,
+.hero p,
+.hero h4 {
+  text-shadow: var(--shadow);
+}
+.hero h1 {
+  font-family: "Sacramento", cursive;
+  font-size: 6.7rem;
+}
+.hero p {
+  font-size: 1.7;
+}
+.hero h4 {
+  font-size: 1.6rem;
+}
+.hero a {
+  background-color: white;
+  transition: 0.3s;
+  box-shadow: var(--shadow);
+}
+.hero a:hover {
+  background-color: var(--pink);
+  color: white;
+}
+
+/* media queary */
+
+/* laptop */
+@media (max-width: 992px) {
+  html {
+    font-size: 75%;
+  }
+  .simply-countdown > .simply-section {
+    padding: 70px;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+  .simply-countdown > .simply-section {
+    padding: 60px;
+    margin: 5px;
+  }
+}
+
+/* mobile */
+@media (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+  .simply-countdown > .simply-section {
+    padding: 45px;
+    margin: 3px;
+  }
+  .hero::before {
+    width: 100%;
+    height: 100%;
+  }
+}
