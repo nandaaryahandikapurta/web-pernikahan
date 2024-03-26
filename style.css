@@ -7,6 +7,7 @@
 .body {
   font-size: 1.2rem;
   font-family: "Encode Sans Expanded", sans-serif;
+  min-height: 50000px;
 }
 
 .hero::before {
@@ -52,7 +53,128 @@
   color: white;
 }
 
+.my-navbar {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(2px);
+}
+
+.my-navbar .navbar-brand,
+.my-navbar .offcanvas-title {
+  font-family: "Sacramento", cursive;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: var(--shadow);
+}
+
+.my-navbar .nav-link {
+  text-transform: uppercase;
+}
+
+.my-navbar .offcanvas {
+  height: 100vh;
+}
+
+.home {
+  background-image: url(img/floral.jpg);
+  background-position: center;
+  background-size: cover;
+  margin-top: -6rem;
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+}
+.home h2 {
+  color: var(--pink);
+  font-family: "Sacramento", cursive;
+  font-weight: bold;
+}
+
+.home h3 {
+  color: #444;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+.home p {
+  color: #666;
+}
+
+.home .couple {
+  margin-top: 100px;
+}
+
+.home .couple h3 {
+  font-family: "Sacramento";
+  font: 2.4rem;
+  color: var(--pink);
+}
+
+.home .couple img {
+  width: 100%;
+}
+.home .heart {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(65px);
+}
+.home .heart i {
+  margin: auto;
+  color: var(--pink);
+}
+
+.info {
+  background-color: black;
+  color: white;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+.info h2 {
+  color: var(--pink);
+  font-size: 4.4rem;
+  font-family: "Sacramento";
+  font-weight: bold;
+}
+
+.info .alamat {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.info .card {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  border: 1px solid #999;
+  font-weight: 700;
+  margin-bottom: 5rem;
+}
+
+.info .card-header {
+  border: 1px solid #999;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.info .card-body {
+  font-size: 1rem;
+}
+.info .card-footer {
+  /* border: 1px solid #999; */
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 /* media queary */
+
+/* extralerge */
+
+@media (max-width: 1200px) {
+  .home .heart {
+    transform: translateX(-50%) translateY(45px);
+  }
+}
 
 /* laptop */
 @media (max-width: 992px) {
@@ -61,6 +183,9 @@
   }
   .simply-countdown > .simply-section {
     padding: 70px;
+  }
+  .home .heart {
+    display: none;
   }
 }
 
@@ -72,6 +197,12 @@
   .simply-countdown > .simply-section {
     padding: 60px;
     margin: 5px;
+  }
+  .my-navbar .nav-link {
+    font-size: 2.4rem;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
   }
 }
 
@@ -87,5 +218,11 @@
   .hero::before {
     width: 100%;
     height: 100%;
+  }
+  .row .couple h3 {
+    font-size: 1.3rem;
+  }
+  .row .couple p {
+    font-size: 1.2rem;
   }
 }
