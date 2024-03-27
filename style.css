@@ -378,7 +378,7 @@
   .time-line li .time-line-panel {
     width: 50%;
     transform: translateX(-20px);
-    left: 15px;
+    left: 8px;
   }
   .time-line li .time-line-panel::before {
     top: 35px;
