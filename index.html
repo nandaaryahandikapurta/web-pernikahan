@@ -30,7 +30,7 @@
         <h1>Miku & Nanda</h1>
         <p>Akan melakukan resepsi pernikahan dalam :</p>
         <div class="simply-countdown"></div>
-        <a href="#undangan" class="btn btn-lg mt-4">lihat undangan</a>
+        <a href="#undangan" class="btn btn-lg mt-4"  onclick="enebleScroll">lihat undangan</a>
       </main>
     </section>
 
@@ -52,6 +52,7 @@
                 <a class="nav-link" href="#info">Info</a>
                 <a class="nav-link" href="#Story">Story</a>
                 <a class="nav-link" href="#gallery">Gallery</a>
+                <a class="nav-link" href="#rsvp">rsvp</a>
                 <a class="nav-link" href="#gift">Gift</a>
               </div>
             </form>
@@ -96,7 +97,7 @@
                 <div class="col-lg-6">
                     <div class="row">
                         <div class="col-4"> 
-                          <img src="img/miku.jpg" class="img-responsive rounded-circle" alt="Nakano miku">
+                          <img src="img/miku-3.jpg" class="img-responsive rounded-circle" alt="Nakano miku">
                         </div>
                         <div class="col-8" >
                           <h3>Nakano miku</h3>
@@ -267,8 +268,8 @@
           </div>
           <div class="row rows-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
             <div class="col mt-3">
-              <a href="img/miku-5.jpg"data-toggle="lightbox" data-caption="This describes the image" data-gallery="my-gallery">
-                <img src="img/miku-5.jpg" alt="Miku" class="img-thumbnail img-fluid w-60 rounded" style="">
+              <a href="img/miku-4.jpg"data-toggle="lightbox" data-caption="This describes the image" data-gallery="my-gallery">
+                <img src="img/miku-4.jpg" alt="Miku" class="img-thumbnail img-fluid w-60 rounded" style="">
               </a>
             </div>
             <div class="col mt-3">
@@ -282,8 +283,8 @@
               </a>
             </div>
             <div class="col mt-3">
-              <a href="img/miku-5.jpg" data-toggle="lightbox" data-caption="This describes the image"data-gallery="my-gallery">
-                <img src="img/miku-5.jpg" alt="Miku" class="img-thumbnail img-fluid w-60 rounded" style="">
+              <a href="img/miku-1.jpg" data-toggle="lightbox" data-caption="This describes the image"data-gallery="my-gallery">
+                <img src="img/miku-1.jpg" alt="Miku" class="img-thumbnail img-fluid w-60 rounded" style="">
               </a>
             </div>
             <div class="col mt-3">
@@ -310,6 +311,109 @@
         </div>
     </section>
     <!-- galleryy-selesai -->
+
+    <!-- rsvp -->
+      <section id="rsvp" class="rsvp">
+          <div class="container">
+            <div class="row justify-content-center text-center ">
+              <div class="col-md-8 col-10">
+                <h2>konfirmasi-kehadiran</h2>
+                <p>Silahkan isi untuk memastikan kehadiran anda!!</p>
+              </div>
+              </div>
+            <form class="row row-cols-md-auto g-3 align-items-center justify-content-center"
+             method="POST" 
+            action="https://script.google.com/macros/s/AKfycbxpf1-Bm_g273CftAIgpDHwjTJfThsBqPjNJgC99jkoYOM09om9nWjlh31WBdylI85hpQ/exec" id="my-form">
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="Name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="Name" name="Name">
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="Jumlah-kehadiran" class="form-label">Jumlah-kehadiran</label>
+                  <input type="number" class="form-control" id="Jumlah-kehadiran" name="Jumlah-kehadiran" min="1" max="8" 
+                  length="1" value="1">
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="Status" class="form-label">konfirmasi</label>
+                <select name="Status" id="Status" class="form-select">
+                  <option selected>Pilih salah satu</option>
+                  <option value="Hadir">Hadir</option>
+                  <option value="Tidak Hadir">Tidak hadir</option>
+                </select>
+                </div>
+              </div>
+
+              <div class="col-12 " style="margin-top: 35px;" >
+                <button class="btn btn-primary">kirim</button>
+              </div>
+
+
+            </form>
+             
+          </div>
+
+      </section>
+    <!-- rsvp-selesai -->
+
+
+
+
+    <section class="gift">
+      <div class="container">
+        <div class="row justify-content-center text-center ">
+          <div class="col-md-8 col-10">
+            <span>Ungkapan tanda terima kasih</span>
+            <h2>kirim hadiah</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quaerat doloremque consectetur quisquam corrupti molestiae placeat expedita explicabo dicta 
+              culpa.</p>
+          </div>
+
+          <div class="row justify-content-center" >
+            <div class="col-md-6" >
+              <ul class="list-group" >
+                <li class="list-group-item" >
+                  <div class="fw-blod" >Dana</div>
+                  2143242345124 - Nanda Arya
+                </li>
+                <li class="list-group-item">
+                  <div class="fw-blod">BRI</div>
+                  2143242345124 - Nanda Arya
+                </li>
+                <li class="list-group-item">
+                  <div class="fw-blod">Gopai</div>
+                  2143242345124 - Nanda Arya
+                </li>
+                
+              </ul>
+            </div>
+            </div>
+            </div>
+      </div>
+    </section>
+
+      
+      <footer>
+        <div class="container">
+          <div class="row">
+          <div class="col text-center">
+            <small class="block">&copy; 2024 DiNo wedding. All Rights Reserved.</small>
+            <small class="block">Design by <a href="https://instagram.com/nandaarye2">@Nandaarye2</a>.</small>
+          </div>
+        </div>
+      </div>
+        
+      </footer>
+
+
+
+
 
 
 
@@ -363,8 +467,49 @@
 
 
 
+
 <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 
+    <script>
+      const rootElement = document.querySelector(":root");
+
+
+      function disableScroll(){
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        window.onscroll = function() {
+          window.scrollTo(scrollTop, scrollLeft);
+        }
+         rootElement.style.scrollBehavior = 'auto';
+        }
+        function enebleScroll () {
+          window.onscroll = function() {}
+          rootElement.style.scrollBehavior = 'smooth';
+          localStorage.setIten('opened', 'true')
+        }
+        if(!localStorage.getItem('opened')){
+
+          disablescroll();
+        }
+    </script>
+
+    <script>
+      window.addEventListener("load", function() {
+  const form = document.getElementById('my-form');
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+    .then(() => {
+      alert("Terimkasih telah mengisi kehadirannya");
+    })
+  });
+});
+    </script>
 
   </body>
 </html>
