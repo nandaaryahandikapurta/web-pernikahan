@@ -26,11 +26,11 @@
   <body>
     <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
       <main>
-        <h4>Kepada ibu bapak saudara sekalian</h4>
+        <h4>Kepada <span> ibu bapak saudara sekalian</span></h4>
         <h1>Miku & Nanda</h1>
         <p>Akan melakukan resepsi pernikahan dalam :</p>
         <div class="simply-countdown"></div>
-        <a href="#undangan" class="btn btn-lg mt-4"  onclick="enebleScroll">lihat undangan</a>
+        <a href="#undangan" class="btn btn-lg mt-4"  onclick="enebleScroll()">lihat undangan</a>
       </main>
     </section>
 
@@ -131,7 +131,10 @@
                 <div class="col-md8 col-10 text-center">
                     <h2>Informasi Acara</h2>
                     <p class="alamat">Alamat: peremuhankologdam, <br> Hasta graha blok 25/20, Wanasari, Kec. Cibitung, Kabupaten Bekasi,</p>
-                    <a href="https://maps.app.goo.gl/VR6yxJwfrjWY8so67" target="_blank" class="btn btn-light btn-sm my-4">Peta</a>
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!3m2!1sid!2sid!4v1711844894095!5m2!1sid!2sid!6m8!1m7!1sV0GwnidiZfktNSRztz0fog!2m2!1d-6.249940257174407!2d107.0897563782495!3f241.34515!4f0!5f0.7820865974627469" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a href="https://maps.app.goo.gl/AmY3sfryTEeWhyog9" target="_blank" class="btn btn-light btn-sm my-4">Peta</a>
                 </div>
             </div>
 
@@ -326,8 +329,8 @@
             action="https://script.google.com/macros/s/AKfycbxpf1-Bm_g273CftAIgpDHwjTJfThsBqPjNJgC99jkoYOM09om9nWjlh31WBdylI85hpQ/exec" id="my-form">
               <div class="col-12">
                 <div class="mb-3">
-                  <label for="Name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="Name" name="Name">
+                  <label for="nama" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="nama" name="nama">
                 </div>
               </div>
 
@@ -356,7 +359,34 @@
 
 
             </form>
-             
+
+
+
+
+            <div class="row justify-content-center mt-5">
+              <div class="col-md-6">
+                <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://wedding-izw4ujn0gp.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              </div>
+            </div>
+
           </div>
 
       </section>
@@ -404,14 +434,26 @@
           <div class="row">
           <div class="col text-center">
             <small class="block">&copy; 2024 DiNo wedding. All Rights Reserved.</small>
-            <small class="block">Design by <a href="https://instagram.com/nandaarye2">@Nandaarye2</a>.</small>
+            <small class="block">Design by <a href="https://instagram.com/nandaarye2">@Nandaarye2</a></small>
           </div>
         </div>
       </div>
         
       </footer>
 
+      <div id="audio-container">
+        <audio id="song" autoplay loop>
+          <source src="audio/sound.mp3" type="audio/mp3">
+        </audio>
+        <div class="audio-icon-wrapper" style="display: none;">
+          <i class="bi bi-music-note-beamed"></i>
 
+        </div>
+         <!-- <div class="audio-icon-wrapper" style=""> 
+          <i class="bi bi-pause-circle"></i>
+
+        </div>  -->
+      </div>
 
 
 
@@ -470,28 +512,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 
-    <script>
-      const rootElement = document.querySelector(":root");
 
 
-      function disableScroll(){
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-        window.onscroll = function() {
-          window.scrollTo(scrollTop, scrollLeft);
-        }
-         rootElement.style.scrollBehavior = 'auto';
-        }
-        function enebleScroll () {
-          window.onscroll = function() {}
-          rootElement.style.scrollBehavior = 'smooth';
-          localStorage.setIten('opened', 'true')
-        }
-        if(!localStorage.getItem('opened')){
-
-          disablescroll();
-        }
-    </script>
+  
 
     <script>
       window.addEventListener("load", function() {
@@ -510,6 +533,71 @@
   });
 });
     </script>
+
+
+
+<script>
+  const rootElement = document.querySelector(":root");
+  const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+  const audioIcon = document.querySelector('.audio-icon-wrapper i');
+   const song = document.querySelector('#song');
+  let isPlaying = false;
+
+  function disableScroll(){
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+    window.onscroll = function () {
+      window.scrollTo(scrollTop, scrollLeft);
+    }
+     rootElement.style.scrollBehavior = 'auto';
+    }
+    function enebleScroll () {
+      window.onscroll = function () { }
+      rootElement.style.scrollBehavior = 'smooth';
+      // localStorage.setIten('opened', 'true')
+    playAudio ();
+    }
+    // if(!localStorage.getItem('opened')) {
+    //   disableScroll;
+    // }
+  function playAudio(){
+    song.volume = 0.5;
+    audioIconWrapper.style.display ='flex';
+    song.play();
+    isPlaying = true;
+  }
+
+    audioIconWrapper.onclick = function() {
+      if(isPlaying) {
+        song.pause();
+        audioIcon.classList.remove('bi-music-note-beamed');
+        audioIcon.classList.add('bi-pause-circle');
+      }else{
+        song.play();
+        audioIcon.classList.add('bi-music-note-beamed');
+        audioIcon.classList.remove('bi-pause-circle');
+      }
+      isPlaying = !isPlaying;
+    }
+
+
+
+  disableScroll();
+
+      </script>
+
+
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const nama = urlParams.get('nama') || '';
+        const pronoun = urlParams.get('p') || 'Bapak/Ibu/saudara/i';
+        const namaContainer = document.querySelector('.hero h4 span');
+         namaContainer.innerText = `${pronoun} ${nama},` .replace(/ ,$/, ',');
+       
+       
+        document.querySelector('#nama').value = nama;
+      </script>
 
   </body>
 </html>
